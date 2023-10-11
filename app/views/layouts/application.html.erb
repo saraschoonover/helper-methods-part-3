@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+   <%= render partial: "shared/cdn_assets" %>
 
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
@@ -17,14 +13,11 @@
   </head>
 
   <body>
-    <div style="color: green;">
-      <%= notice %>
-    </div>
+    <%= render partial: "shared/navbar"%>
 
-    <div style="color: red;">
-      <%= alert %>
+    <div class="container mt-3">
+      <%= render partial: "shared/flash_messages"%>
+      <%= yield %>
     </div>
-     <%= render "shared/navbar"%>
-    <%= yield %>
   </body>
 </html>
